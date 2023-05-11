@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/Page.css";
-import Card from "../Card";
+import GraphCard from "../GraphCard";
 const Home = (props) => {
   return (
     <>
@@ -11,7 +11,8 @@ const Home = (props) => {
           </p>
         </div>
       </section>
-      <div className="cards">
+      <GraphCard/>
+      {/* <div className="cards">
         <Card
           img="1"
           heading="Monthly Calendar"
@@ -64,15 +65,15 @@ const Home = (props) => {
           content="Cast to TV using Chromecast, AirPlay and Bluetooth."
         />
       </div>
-      <div className=" centralize mt-25 mb-25">
+      {/* <div className=" centralize mt-25 mb-25">
         <button className="intouch">View app features</button>
-      </div>
+      </div> */}
       <div className="h-150 bg-dark flex-space-evenly title-white">
         <div>Grow your online business further</div>
         <div>
             <button className="btn-blue">Contact Us</button>
         </div>
-      </div>
+      </div> 
     </>
   );
 };

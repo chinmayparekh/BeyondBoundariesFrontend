@@ -24,17 +24,17 @@ function Graph() {
         console.log(error);
       });
   }, []);
-  console.log(data);
+  // console.log(data);
   const { cities, ids } = data;
-  console.log(cities);
-  console.log(ids);
+  // console.log(cities);
+  // console.log(ids);
 
   const chartData = ids?.map((id, index) => ({
     id,
     city: cities[index],
   }));
 
-  console.log(chartData);
+  // console.log(chartData);
 
   return (
     <div>
@@ -43,12 +43,12 @@ function Graph() {
         <ScatterChart width={600} height={300}>
           <CartesianGrid />
           <XAxis dataKey="id"   />
-          <YAxis dataKey="city"  />
+          <YAxis dataKey="city" domain={[0, 200]}  />
           <Tooltip cursor={{ strokeDasharray: "3 3" }} />
           <Scatter name="Cities" data={chartData} fill="#8884d8" />
         </ScatterChart>
       </div>
-      <div>
+      {/* <div>
         <BarChart width={600} height={600} data={chartData}>
           <Bar dataKey="city" fill="#8884d8" />
           <CartesianGrid strokeDasharray="3 3" />
@@ -56,12 +56,25 @@ function Graph() {
           <YAxis />
           <Tooltip />
         </BarChart>
-      </div>
-      {Object.keys(data).map((key) => (
-        <h3>
-          {key}:{data[key]}
-        </h3>
-      ))}
+      </div> */}
+      <div>
+      <BarChart width={1200} height={500} data={chartData}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="id" angle={-20} textAnchor="end" />
+        <YAxis domain={[0, 200]} />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="city" fill="#8884d8" />
+      </BarChart>
+    </div>
+    <div>
+      <br />
+      <br/>
+      <br/>
+      <br />
+      <br/>
+      <br/>
+    </div>
     </div>
   );
 }

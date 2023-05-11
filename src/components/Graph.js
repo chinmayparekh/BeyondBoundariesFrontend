@@ -42,8 +42,8 @@ function Graph() {
       <div>
         <ScatterChart width={600} height={300}>
           <CartesianGrid />
-          <XAxis dataKey="id" type="number" name="ID" />
-          <YAxis dataKey="city" type="category" name="City" />
+          <XAxis dataKey="id"   />
+          <YAxis dataKey="city"  />
           <Tooltip cursor={{ strokeDasharray: "3 3" }} />
           <Scatter name="Cities" data={chartData} fill="#8884d8" />
         </ScatterChart>

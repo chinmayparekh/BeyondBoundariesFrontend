@@ -48,15 +48,6 @@ function Graph() {
           <Scatter name="Cities" data={chartData} fill="#8884d8" />
         </ScatterChart>
       </div>
-      {/* <div>
-        <BarChart width={600} height={600} data={chartData}>
-          <Bar dataKey="city" fill="#8884d8" />
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="id" />
-          <YAxis />
-          <Tooltip />
-        </BarChart>
-      </div> */}
       <div>
       <BarChart width={1200} height={500} data={chartData}>
         <CartesianGrid strokeDasharray="3 3" />

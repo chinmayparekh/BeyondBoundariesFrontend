@@ -6,6 +6,8 @@ import Donut from "./components/charts/Donut";
 import Temp from "./components/Temp.js";
 import Graph from "./components/Graph";
 import GraphCard from "./components/GraphCard";
+import Options from "./components/Options";
+import ContactForm from "./components/ContactForm";
 function App() {
   return (
     <>
@@ -14,6 +16,8 @@ function App() {
       <Home />
       <Donut />
       <Temp />
+      <Options/>
+      <ContactForm />
       <Graph />
     </>
   );

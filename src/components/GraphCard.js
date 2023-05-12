@@ -16,8 +16,6 @@ function Graph() {
       });
   }, []);
   const { players, runs } = data;
- 
-
   const [bowlers_data, setBowler] = useState([]);
 
   useEffect(() => {
@@ -31,7 +29,33 @@ function Graph() {
       });
   }, []);
   const { bowlers, wickets } = bowlers_data;
-  console.log("final",bowlers_data);
+
+  const [ipl, setIpl] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:6969/data")
+      .then((response) => {
+        setIpl(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  const {
+    catches_2020,
+    catches_2021,
+    catches_2022,
+    orange_2020,
+    orange_2021,
+    orange_2022,
+    purple_2020,
+    purple_2021,
+    purple_2022,
+  } = ipl;
+  // console.log(orange_2022?.x);
+  // console.log(players);
+
   return (
     <>
       <div>
@@ -43,9 +67,9 @@ function Graph() {
               </div>
               <div className="card-content">
                 <ul>
-                  {players?.map((player, index) => (
+                  {orange_2022?.x.map((player, index) => (
                     <li key={index}>
-                      {player}:{data.runs[index]}
+                      {player}:{orange_2022.y[index]}
                     </li>
                   ))}
                 </ul>
@@ -59,9 +83,9 @@ function Graph() {
               </div>
               <div className="card-content">
                 <ul>
-                  {bowlers?.map((bowler, index) => (
+                  {purple_2022?.x.map((bowler, index) => (
                     <li key={index}>
-                      {bowler}:{bowlers_data.wickets[index]}
+                      {bowler}:{purple_2022.y[index]}
                     </li>
                   ))}
                 </ul>
@@ -71,65 +95,13 @@ function Graph() {
           <div className="card" id="card">
             <div className="card-body align-start">
               <div className="card-summary">
-                <p className="card-heading ">Orange Cap - 2022</p>
+                <p className="card-heading "> Most Catches - 2022</p>
               </div>
               <div className="card-content">
                 <ul>
-                  {players?.map((player, index) => (
+                  {catches_2022?.x.map((player, index) => (
                     <li key={index}>
-                      {player}:{data.runs[index]}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="card" id="card-flex">
-          <div className="card" id="card">
-            <div className="card-body align-start">
-              <div className="card-summary">
-                <p className="card-heading ">Orange Cap - 2022</p>
-              </div>
-              <div className="card-content">
-                <ul>
-                  {players?.map((player, index) => (
-                    <li key={index}>
-                      {player}:{data.runs[index]}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="card" id="card">
-            <div className="card-body align-start">
-              <div className="card-summary">
-                <p className="card-heading ">Orange Cap - 2022</p>
-              </div>
-              <div className="card-content">
-                <ul>
-                  {players?.map((player, index) => (
-                    <li key={index}>
-                      {player}:{data.runs[index]}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="card" id="card">
-            <div className="card-body align-start">
-              <div className="card-summary">
-                <p className="card-heading ">Orange Cap - 2022</p>
-              </div>
-              <div className="card-content">
-                <ul>
-                  {players?.map((player, index) => (
-                    <li key={index}>
-                      {player}:{data.runs[index]}
+                      {player}:{catches_2022.y[index]}
                     </li>
                   ))}
                 </ul>
@@ -141,13 +113,13 @@ function Graph() {
           <div className="card" id="card">
             <div className="card-body align-start">
               <div className="card-summary">
-                <p className="card-heading ">Orange Cap - 2022</p>
+                <p className="card-heading ">Orange Cap - 2021</p>
               </div>
               <div className="card-content">
                 <ul>
-                  {players?.map((player, index) => (
+                  {orange_2021?.x.map((player, index) => (
                     <li key={index}>
-                      {player}:{data.runs[index]}
+                      {player}:{orange_2021.y[index]}
                     </li>
                   ))}
                 </ul>
@@ -157,29 +129,79 @@ function Graph() {
           <div className="card" id="card">
             <div className="card-body align-start">
               <div className="card-summary">
-                <p className="card-heading ">Orange Cap - 2022</p>
+                <p className="card-heading ">Purple Cap - 2021</p>
               </div>
               <div className="card-content">
                 <ul>
-                  {players?.map((player, index) => (
+                  {purple_2021?.x.map((bowler, index) => (
                     <li key={index}>
-                      {player}:{data.runs[index]}
+                      {bowler}:{purple_2021.y[index]}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
           </div>
-          <div  id="card">
+          <div className="card" id="card">
             <div className="card-body align-start">
               <div className="card-summary">
-                <p className="card-heading ">Orange Cap - 2022</p>
+                <p className="card-heading "> Most Catches - 2021</p>
               </div>
               <div className="card-content">
                 <ul>
-                  {players?.map((player, index) => (
+                  {catches_2021?.x.map((player, index) => (
                     <li key={index}>
-                      {player}:{data.runs[index]}
+                      {player}:{catches_2021.y[index]}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="card" id="card-flex">
+          <div className="card" id="card">
+            <div className="card-body align-start">
+              <div className="card-summary">
+                <p className="card-heading ">Orange Cap - 2020</p>
+              </div>
+              <div className="card-content">
+                <ul>
+                  {orange_2020?.x.map((player, index) => (
+                    <li key={index}>
+                      {player}:{orange_2020.y[index]}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="card" id="card">
+            <div className="card-body align-start">
+              <div className="card-summary">
+                <p className="card-heading ">Purple Cap - 2020</p>
+              </div>
+              <div className="card-content">
+                <ul>
+                  {purple_2020?.x.map((bowler, index) => (
+                    <li key={index}>
+                      {bowler}:{purple_2020.y[index]}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="card" id="card">
+            <div className="card-body align-start">
+              <div className="card-summary">
+                <p className="card-heading "> Most Catches - 2020</p>
+              </div>
+              <div className="card-content">
+                <ul>
+                  {catches_2020?.x.map((player, index) => (
+                    <li key={index}>
+                      {player}:{catches_2020.y[index]}
                     </li>
                   ))}
                 </ul>

@@ -3,33 +3,6 @@ import axios from "axios";
 import "../styles/Page.css";
 
 function Graph() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:6969/orange")
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  const { players, runs } = data;
-  const [bowlers_data, setBowler] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:6969/purple")
-      .then((response) => {
-        setBowler(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-  const { bowlers, wickets } = bowlers_data;
-
   const [ipl, setIpl] = useState([]);
 
   useEffect(() => {
@@ -53,8 +26,7 @@ function Graph() {
     purple_2021,
     purple_2022,
   } = ipl;
-  // console.log(orange_2022?.x);
-  // console.log(players);
+
 
   return (
     <>

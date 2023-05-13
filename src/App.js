@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
 import Predef from "./components/Predef";
 import Dropdown from "./components/Dropdown";
+import Exp from "./components/Radar";
 function App() {
   const [selectedValue, setSelectedValue] = useState("");
 
@@ -17,6 +18,7 @@ function App() {
       <Home />
       <Dropdown onSelectChange={handleSelectChange} />
       <Predef selectedValue={selectedValue} />
+      <Exp/>
       <ContactForm />
     </>
   );

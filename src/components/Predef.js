@@ -33,17 +33,17 @@ const ChartData = (props) => {
   useEffect(() => {
     setSelectedValue(props.selectedValue);
   }, [props.selectedValue]);
-  console.log(props)
+  console.log(props);
   console.log(type);
   const chartData = x?.map((id, index) => ({
     id,
     city: y[index],
   }));
   console.log(chartData);
-  if (type === "line") {
+  if (type === "bar") {
     return (
       <div className="centralize mt-50 mb-25">
-        <h1>Line graph for matches played in each city</h1>
+        <h1>Bar graph for matches played in each city</h1>
         <BarChart width={800} height={500} data={chartData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="id" angle={-20} textAnchor="end" />
@@ -74,17 +74,22 @@ const ChartData = (props) => {
       </div>
     );
   } else if (type === "pie") {
-    const pieData = chartData.map((item) => ({ x: item.id, y: item.city }));
+    const totalMatches = chartData.reduce((total, item) => total + item.city, 0);
+    const pieData = chartData.map((item) => ({
+      x: item.id,
+      y: item.city / totalMatches,
+    }));
+    console.log(pieData);
     return (
       <div className="centralize">
         <h1>Pie graph for matches played in each city</h1>
-        <div className="setHeightWidth">
+        <div className="setHeightWidth" >
           <VictoryPie
             data={pieData}
             colorScale="qualitative"
-            radius={100}
-            innerRadius={40}
-            labelRadius={60}
+            radius={150}
+            innerRadius={70}
+            labelRadius={90}
             style={{
               labels: { fill: "black", fontSize: 8, fontWeight: "bold" },
             }}

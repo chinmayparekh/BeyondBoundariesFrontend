@@ -1,6 +1,6 @@
 function Dropdown(props) {
     const options = [
-      { value: "line", label: "Line" },
+      { value: "bar", label: "Bar" },
       { value: "pie", label: "Pie" },
       { value: "area", label: "Area" },
       { value: "scatter", label: "Scatter" },

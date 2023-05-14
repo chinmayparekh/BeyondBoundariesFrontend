@@ -27,12 +27,27 @@ function Graph() {
     purple_2022,
   } = ipl;
 
-
   return (
     <>
       <div>
         <div className="card" id="card-flex">
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #FFA07A, #FF8C00)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading ">Orange Cap - 2022</p>
@@ -48,7 +63,23 @@ function Graph() {
               </div>
             </div>
           </div>
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #6A5ACD, #9400D3)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading ">Purple Cap - 2022</p>
@@ -64,7 +95,23 @@ function Graph() {
               </div>
             </div>
           </div>
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #FFFF00, #FFD700)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading "> Most Catches - 2022</p>
@@ -82,7 +129,23 @@ function Graph() {
           </div>
         </div>
         <div className="card" id="card-flex">
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #FFA07A, #FF8C00)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading ">Orange Cap - 2021</p>
@@ -98,7 +161,23 @@ function Graph() {
               </div>
             </div>
           </div>
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #6A5ACD, #9400D3)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading ">Purple Cap - 2021</p>
@@ -114,7 +193,23 @@ function Graph() {
               </div>
             </div>
           </div>
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #FFFF00, #FFD700)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading "> Most Catches - 2021</p>
@@ -132,7 +227,23 @@ function Graph() {
           </div>
         </div>
         <div className="card" id="card-flex">
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #FFA07A, #FF8C00)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading ">Orange Cap - 2020</p>
@@ -148,7 +259,23 @@ function Graph() {
               </div>
             </div>
           </div>
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #6A5ACD, #9400D3)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading ">Purple Cap - 2020</p>
@@ -164,7 +291,23 @@ function Graph() {
               </div>
             </div>
           </div>
-          <div className="card" id="card">
+          <div
+            className="card"
+            id="card"
+            style={{
+              backgroundImage: "linear-gradient(to right, #FFFF00, #FFD700)",
+              transition:
+                "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.1)";
+              e.currentTarget.style.backgroundColor = "#9400D3";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#6A5ACD";
+            }}
+          >
             <div className="card-body align-start">
               <div className="card-summary">
                 <p className="card-heading "> Most Catches - 2020</p>

@@ -57,3 +57,20 @@ const Exp = () => {
 };
 
 export default Exp;
+
+
+// {
+//   "player1": {
+//   "runs": 1,
+//   "wickets": 2,
+//   "catches": 4
+//   }, "player2": {
+//   "runs": 1,
+//   "wickets": 2,
+//   "catches": 4
+//   }, "player3": {
+//   "runs": 1,
+//   "wickets": 2,
+//   "catches": 4
+//   }
+//   }

@@ -56,51 +56,141 @@ function NumberForm() {
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit} className="form">
-          <label className="form-label">
-            Name:
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="form-input"
-            />
-          </label>
-          <br />
-          <label className="form-label">
-            Value 1:
-            <input
-              type="number"
-              value={value1}
-              onChange={(e) => setValue1(parseInt(e.target.value))}
-              className="form-input"
-            />
-          </label>
-          <br />
-          <label className="form-label">
-            Value 2:
-            <input
-              type="number"
-              value={value2}
-              onChange={(e) => setValue2(parseInt(e.target.value))}
-              className="form-input"
-            />
-          </label>
-          <label className="form-label">
-            Type of Graph:
-            <input
-              type="text"
-              placeholder="pie/area/bar/scatter"
-              value={graph_type}
-              onChange={(e) => setType(e.target.value)}
-              className="form-input"
-            />
-          </label>
-          <br />
-          <button type="submit" className="form-button">
-            Submit
-          </button>
-        </form>
+        <div className="form-container">
+          <div className="flex mb-20 mt-10">
+            <h2>DataFrame Schema</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Column Name</th>
+                  <th>Data Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>integer</td>
+                </tr>
+                <tr>
+                  <td>inning</td>
+                  <td>integer</td>
+                </tr>
+                <tr>
+                  <td>over</td>
+                  <td>float</td>
+                </tr>
+                <tr>
+                  <td>ball</td>
+                  <td>float</td>
+                </tr>
+                <tr>
+                  <td>batsman</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>non_striker</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>bowler</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>batsman_runs</td>
+                  <td>integer</td>
+                </tr>
+                <tr>
+                  <td>extra_runs</td>
+                  <td>integer</td>
+                </tr>
+                <tr>
+                  <td>total_runs</td>
+                  <td>integer</td>
+                </tr>
+                <tr>
+                  <td>non_boundary</td>
+                  <td>boolean</td>
+                </tr>
+                <tr>
+                  <td>is_wicket</td>
+                  <td>boolean</td>
+                </tr>
+                <tr>
+                  <td>dismissal_kind</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>player_dismissed</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>fielder</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>extras_type</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>batting_team</td>
+                  <td>string</td>
+                </tr>
+                <tr>
+                  <td>bowling_team</td>
+                  <td>string</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2 className="form-heading centralize">
+            Visualization of a given query
+          </h2>
+          <form onSubmit={handleSubmit} className="form">
+            <label className="form-label">
+              Query:
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="form-input"
+              />
+            </label>
+            <br />
+            <label className="form-label">
+              Parameter 1:
+              <input
+                type="number"
+                value={value1}
+                onChange={(e) => setValue1(parseInt(e.target.value))}
+                className="form-input"
+              />
+            </label>
+            <br />
+            <label className="form-label">
+              Paramter 2:
+              <input
+                type="number"
+                value={value2}
+                onChange={(e) => setValue2(parseInt(e.target.value))}
+                className="form-input"
+              />
+            </label>
+            <label className="form-label">
+              Type of Graph:
+              <input
+                type="text"
+                placeholder="pie/area/bar/scatter"
+                value={graph_type}
+                onChange={(e) => setType(e.target.value)}
+                className="form-input"
+              />
+            </label>
+            <br />
+            <button type="submit" className="form-button">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
       <div>
         {chartType === "bar" && (

@@ -21,7 +21,6 @@ function App() {
       <Predef selectedValue={selectedValue} />
       <ContactForm />
       <Form />
-      {/* <Exp /> */}
     </>
   );
 }

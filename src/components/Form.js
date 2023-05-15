@@ -39,15 +39,16 @@ function Form() {
       console.error(error);
     }
   };
+  console.log(data);
   const labels = ["runs", "wickets", "catches"];
   const colors = ["#0088FE", "#00C49F", "#FFBB28"]; // custom colors
   const chartData = Object.entries(data).map(([key, value]) => ({
     player: key.charAt(0).toUpperCase() + key.slice(1),
     runs: value.runs,
-    wickets: value.wickets,
-    catches: value.catches,
+    wickets: value.wickets * 5,
+    catches: value.catches * 10,
   }));
-  
+  console.log("Chartdata", chartData);
   const dataFormatted = Object.entries(data).map(([key, value], index) => ({
     player: key,
     ...value,
@@ -57,41 +58,44 @@ function Form() {
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit} className="form">
-          <label className="form-label">
-            Name 1:
-            <input
-              type="text"
-              value={name1}
-              onChange={(e) => setName1(e.target.value)}
-              className="form-input"
-            />
-          </label>
-          <br />
-          <label className="form-label">
-            Name 2:
-            <input
-              type="text"
-              value={name2}
-              onChange={(e) => setName2(e.target.value)}
-              className="form-input"
-            />
-          </label>
-          <br />
-          <label className="form-label">
-            Name 3:
-            <input
-              type="text"
-              value={name3}
-              onChange={(e) => setName3(e.target.value)}
-              className="form-input"
-            />
-          </label>
-          <br />
-          <button type="submit" className="form-button">
-            Submit
-          </button>
-        </form>
+        <div className="form-container">
+          <h2 className="form-heading centralize">Visualization of different attributes of players</h2>
+          <form onSubmit={handleSubmit} className="form">
+            <label className="form-label">
+              Player 1:
+              <input
+                type="text"
+                value={name1}
+                onChange={(e) => setName1(e.target.value)}
+                className="form-input"
+              />
+            </label>
+            <br />
+            <label className="form-label">
+              Player 2:
+              <input
+                type="text"
+                value={name2}
+                onChange={(e) => setName2(e.target.value)}
+                className="form-input"
+              />
+            </label>
+            <br />
+            <label className="form-label">
+              Player 3:
+              <input
+                type="text"
+                value={name3}
+                onChange={(e) => setName3(e.target.value)}
+                className="form-input"
+              />
+            </label>
+            <br />
+            <button type="submit" className="form-button">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
       <div>
         <div className="radar">
@@ -100,7 +104,7 @@ function Form() {
           </div>
 
           <div>
-            <RadarChart width={450} height={500} data={dataFormatted}>
+            <RadarChart width={450} height={500} data={chartData}>
               <PolarGrid />
               <PolarAngleAxis dataKey="player" />
               <PolarRadiusAxis angle={30} domain={[0, 10]} />

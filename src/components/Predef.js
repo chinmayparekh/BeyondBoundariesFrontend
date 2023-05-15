@@ -57,8 +57,8 @@ const ChartData = (props) => {
   const y_balls = balls.y;
   const x_pom = pom.x;
   const y_pom = pom.y;
-
   const [type, setSelectedValue] = useState(props.selectedValue);
+  const [graph_type, setDefault] = useState("scatter");
   useEffect(() => {
     setSelectedValue(props.selectedValue);
   }, [props.selectedValue]);
@@ -77,8 +77,9 @@ const ChartData = (props) => {
     id,
     pom: y_pom[index],
   }));
+  console.log(graph_type);
 
-  if (type === "bar") {
+  if ( type === "bar" ) {
     return (
       <>
         <div className="centralize mt-50 mb-25">
@@ -255,7 +256,7 @@ const ChartData = (props) => {
         </div>
       </>
     );
-  } else if (type === "scatter") {
+  } else if (graph_type === "scatter"||type === "scatter") {
     return (
       <>
         <div className="centralize mt-50 mb-25">

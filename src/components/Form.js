@@ -17,13 +17,13 @@ function Form() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    formData.append("name1", name1);
-    formData.append("name2", name2);
-    formData.append("name3", name3);
+    formData.append("player1", name1);
+    formData.append("player2", name2);
+    formData.append("player3", name3);
     console.log(formData);
 
     try {
-      const response = await fetch("http://localhost:6969/player", {
+      const response = await fetch("http://localhost:6969/radar", {
         method: "POST",
         body: formData,
       });
@@ -41,7 +41,7 @@ function Form() {
   };
   console.log(data);
   const labels = ["runs", "wickets", "catches"];
-  const colors = ["#0088FE", "#00C49F", "#FFBB28"]; // custom colors
+  const colors = ["#0088FE", "#000000", "#FFBB28"]; // custom colors
   const chartData = Object.entries(data).map(([key, value]) => ({
     player: key.charAt(0).toUpperCase() + key.slice(1),
     runs: value.runs,

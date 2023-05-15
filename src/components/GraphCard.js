@@ -7,7 +7,7 @@ function Graph() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6969/data")
+      .get("http://localhost:6969/cards-predef")
       .then((response) => {
         setIpl(response.data);
       })

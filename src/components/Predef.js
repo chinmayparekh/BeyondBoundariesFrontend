@@ -22,7 +22,7 @@ const ChartData = (props) => {
   const [pom, setPom] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:6969/venue-data")
+      .get("http://localhost:6969/get-venues")
       .then((response) => {
         setVenue(response.data);
       })
@@ -33,7 +33,7 @@ const ChartData = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6969/venue-data")
+      .get("http://localhost:6969/get-balls-faced")
       .then((response) => {
         setBalls(response.data);
       })
@@ -43,7 +43,7 @@ const ChartData = (props) => {
   }, []);
   useEffect(() => {
     axios
-      .get("http://localhost:6969/venue-data")
+      .get("http://localhost:6969/get-pom")
       .then((response) => {
         setPom(response.data);
       })
@@ -94,7 +94,7 @@ const ChartData = (props) => {
           </BarChart>
         </div>
         <div className="centralize mt-50 mb-25">
-          <h1>Bar graph for maximum balls faced by players</h1>
+          <h1>Bar graph for total balls faced by each player</h1>
           <BarChart width={800} height={500} data={bowlData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="id" angle={-20} textAnchor="end" />
@@ -105,7 +105,7 @@ const ChartData = (props) => {
           </BarChart>
         </div>
         <div className="centralize mt-50 mb-25">
-          <h1>Bar graph for Player of the match</h1>
+          <h2>Bar graph for player of the match awards for each player</h2>
           <BarChart width={800} height={500} data={pomData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="id" angle={-20} textAnchor="end" />
@@ -137,7 +137,7 @@ const ChartData = (props) => {
           </AreaChart>
         </div>
         <div className="centralize mt-50 mb-25">
-          <h1>Area graph for maximum balls faced by players</h1>
+          <h1>Area graph for total balls faced by each player</h1>
           <AreaChart width={800} height={500} data={bowlData}>
             <XAxis dataKey="id" />
             <YAxis domain={[0, 200]} />
@@ -153,7 +153,7 @@ const ChartData = (props) => {
           </AreaChart>
         </div>
         <div className="centralize mt-50 mb-25">
-          <h1>Area graph for Player of the match</h1>
+          <h1>Area graph for player of the match awards for each player</h1>
           <AreaChart width={800} height={500} data={pomData}>
             <XAxis dataKey="id" />
             <YAxis domain={[0, 200]} />
@@ -219,7 +219,7 @@ const ChartData = (props) => {
           </div>
         </div>
         <div className="centralize">
-          <h1>Pie graph for maximum balls faced by players</h1>
+          <h1>Pie graph for total balls faced by each player</h1>
           <div className="setHeightWidth">
             <VictoryPie
               data={pieData_balls}
@@ -237,7 +237,7 @@ const ChartData = (props) => {
           </div>
         </div>
         <div className="centralize">
-          <h1>Pie graph for Player of the match</h1>
+          <h1>Pie graph for player of the match awards for each player</h1>
           <div className="setHeightWidth">
             <VictoryPie
               data={pieData_pom}
@@ -270,7 +270,7 @@ const ChartData = (props) => {
           </ScatterChart>
         </div>
         <div className="centralize mt-50 mb-25">
-          <h1>Scatter graph for maximum balls faced by players</h1>
+          <h1>Scatter graph for total balls faced by each player</h1>
           <ScatterChart width={800} height={500}>
             <CartesianGrid />
             <XAxis dataKey="id" />
@@ -280,7 +280,7 @@ const ChartData = (props) => {
           </ScatterChart>
         </div>
         <div className="centralize mt-50 mb-25">
-          <h1>Scatter graph for Player of the match</h1>
+          <h1>Scatter graph for player of the match awards for each player</h1>
           <ScatterChart width={800} height={500}>
             <CartesianGrid />
             <XAxis dataKey="id" />

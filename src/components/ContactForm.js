@@ -26,7 +26,7 @@ function NumberForm() {
     formData.append("value1", value1);
     formData.append("value2", value2);
     formData.append("type", graph_type);
-    fetch("http://localhost:6969/submit-data", {
+    fetch("http://localhost:6969/query", {
       method: "POST",
       body: formData,
     })
@@ -53,12 +53,33 @@ function NumberForm() {
     x: item.id,
     y: item.city / totalMatches,
   }));
+
+
+  const columns = [
+    "id",
+    "city",
+    "date",
+    "player_of_match",
+    "venue",
+    "neutral_venue",
+    "team1",
+    "team2",
+    "toss_winner",
+    "toss_decision",
+    "winner",
+    "result",
+    "result_margin",
+    "eliminator",
+    "method",
+    "umpire1",
+    "umpire2",
+  ];
   return (
     <>
       <div>
         <div className="form-container">
           <div className="flex mb-20 mt-10">
-            <h2>DataFrame Schema</h2>
+            <h2>DataFrame Schema of Ball to Ball </h2>
             <table>
               <thead>
                 <tr>
@@ -72,19 +93,19 @@ function NumberForm() {
                   <td>integer</td>
                 </tr>
                 <tr>
-                  <td>inning</td>
-                  <td>integer</td>
+                  <td>overs</td>
+                  <td>int</td>
                 </tr>
                 <tr>
-                  <td>over</td>
-                  <td>float</td>
+                  <td>ballnumber</td>
+                  <td>int</td>
                 </tr>
                 <tr>
-                  <td>ball</td>
-                  <td>float</td>
+                  <td>bowler</td>
+                  <td>string</td>
                 </tr>
                 <tr>
-                  <td>batsman</td>
+                  <td>batter</td>
                   <td>string</td>
                 </tr>
                 <tr>
@@ -92,55 +113,66 @@ function NumberForm() {
                   <td>string</td>
                 </tr>
                 <tr>
-                  <td>bowler</td>
+                  <td>extra_type</td>
                   <td>string</td>
                 </tr>
                 <tr>
-                  <td>batsman_runs</td>
+                  <td>total_run</td>
                   <td>integer</td>
                 </tr>
                 <tr>
-                  <td>extra_runs</td>
+                  <td>overthrow</td>
                   <td>integer</td>
                 </tr>
                 <tr>
-                  <td>total_runs</td>
+                  <td>iswicket</td>
                   <td>integer</td>
                 </tr>
                 <tr>
-                  <td>non_boundary</td>
-                  <td>boolean</td>
-                </tr>
-                <tr>
-                  <td>is_wicket</td>
-                  <td>boolean</td>
-                </tr>
-                <tr>
-                  <td>dismissal_kind</td>
+                  <td>player_out</td>
                   <td>string</td>
                 </tr>
                 <tr>
-                  <td>player_dismissed</td>
+                  <td>wicket_kind</td>
                   <td>string</td>
                 </tr>
                 <tr>
-                  <td>fielder</td>
-                  <td>string</td>
-                </tr>
-                <tr>
-                  <td>extras_type</td>
+                  <td>fielders_involved</td>
                   <td>string</td>
                 </tr>
                 <tr>
                   <td>batting_team</td>
                   <td>string</td>
                 </tr>
-                <tr>
-                  <td>bowling_team</td>
-                  <td>string</td>
-                </tr>
               </tbody>
             </table>
+            <a href="https://www.kaggle.com/datasets/vora1011/ipl-2008-to-2021-all-match-dataset?select=IPL_Matches_2008_2022.csv">
+              Click here to view the full dataframe
+            </a>
+          </div>
+          <div class="form-container">
+            <div className="flex mb-20 mt-10">
+              <h2>DataFrame Schema of Matches</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {columns.map((column) => (
+                    <tr key={column}>
+                      <td>{column}</td>
+                      <td>String</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <a href="https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020?select=IPL+Matches+2008-2020.csv">
+                Click here to view the full dataframe
+              </a>
+            </div>
           </div>
           <h2 className="form-heading centralize">
             Visualization of a given query
